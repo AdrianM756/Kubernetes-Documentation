@@ -3,7 +3,7 @@ of pods running in a cluster.
 
 ## Create a deployment
 
-On this documentation, we will use an image of **nginx:alpine** for our deployment. Make sure that docker is already installed on the system. if the image **nginx:alpine** is not on the system yet, you can use the following command:
+On this documentation, we will use an image of ```nginx:alpine``` for our deployment. Make sure that docker is already installed on the system. if the image **nginx:alpine** is not on the system yet, you can use the following command:
 
 ```
   docker pull nginx:alpine
@@ -68,15 +68,37 @@ You should be able to get a similar output. As you will notice, the number of av
 
 ![image](https://github.com/user-attachments/assets/bc9e70fa-d862-402b-b839-3821a519df30)
 
+## Updating a deployment
+
+Deployments also has the ability to update an application. Kubernetes offers multiple rollout strategies, but the default is ```rolling update```.
+
+To test, we will change the current image of our deployment from ```nginx:alpine``` to ```httpd:alpine```. to do this we will use the command:
+
+```
+kubectl set image deployment <NAME OF THE DEPLOYMENT> nginx=httpd:alpine
+```
+We can use the command ``` kubectl get deployment <NAME OF YOUR DEPLOYMENT> ``` to verify if it is now running. You should be able to get a similar output.
+
+![image](https://github.com/user-attachments/assets/814a2eec-1c27-407c-812b-4de370ac558b)
+
+To check if the image change from ```nginx:alpine``` to ```httpd:alpine```, we can use:
+
+```
+kubectl describe deployment <NAME OF THE DEPLOYMENT>
+```
+![image](https://github.com/user-attachments/assets/b182fb67-f4d9-4006-9aba-b0486732be65)
+
+## Deleting a Deployment
+
+To delete a deployment, use the command:
+
+```
+kubectl delete deployment <NAME OF THE DEPLOYMENT>
+```
 
 
-
-
-
-
-
-
-
+## Author:
+- [Sef Adrian Milambiling](https://github.com/AdrianM756)
 
 ## References:
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
