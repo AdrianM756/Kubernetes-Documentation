@@ -1,4 +1,4 @@
-Deployments are an object in Kubernetes used to describe the desired state of subset of pods in a cluster. Once a Deployment is created, various controllers in the cluster use it to create other API objects, and eventually have the desired number
+[Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) are an object in Kubernetes used to describe the desired state of subset of pods in a cluster. Once a Deployment is created, various controllers in the cluster use it to create other API objects, and eventually have the desired number
 of pods running in a cluster.
 
 ## Create a deployment
@@ -32,7 +32,7 @@ kubectl get deployment <NAME OF YOUR DEPLOYMENT>
 
 ## Scaling a deployment
 
-Deployments provide an easy way to scale up an application by running more pods.
+[Scaling a deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment) provides an easy way to scale up an application by running more pods.
 
 On this system, we will try to replicate 3 of the deployment that we've just created. To do this, we will use the command:
 
@@ -99,8 +99,4 @@ kubectl delete deployment <NAME OF THE DEPLOYMENT>
 
 ## Author:
 - [Sef Adrian Milambiling](https://github.com/AdrianM756)
-
-## References:
-https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment
 
